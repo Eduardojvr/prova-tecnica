@@ -37,5 +37,13 @@ input[type=text]{
     padding-top: 20px;
     padding-bottom: 20px;
     color: whitesmoke;
+}
 
+.size{
+    font-size: 12px;
+}
+
+button[id=botao]{
+    border: none;
+    border-color: none;
 }

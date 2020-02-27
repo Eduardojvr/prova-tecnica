@@ -10,6 +10,7 @@ Para esta solução não foi utilizado nenhum servidor ou api. Todas as informa�
 
 No desenvolvimento da solução utilizou-se as seguintes ferramentas:
 - Vue.js framework
+- Axios
 - HTML
 - CSS
 - Bootstrap

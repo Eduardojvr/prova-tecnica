@@ -10,20 +10,47 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-light bg-dark">
-        <a class="navbar-brand" href="#">
-          <img src="../resources/img/elo2.png" width="200" height="70" alt="">
-        </a>
-      </nav>
-    <div id="form" class="formulario">
+    <div id="form">    
+        <!-- Modal -->
+        <div class="modal fade" id="alerta" tabindex="-1" role="dialog" aria-labelledby="alerta" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: rgb(245, 160, 1);">
+                    <div style="padding-left: 40%; color: whitesmoke;">
+                        <h3>Alerta</h3>
+                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" v-for="msg in mensagens">
+                    <span class="obg">*</span>{{ msg }}
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- Final modal -->
+
+        <!--  Inicio navbar -->
+        <nav class="navbar navbar-light bg-dark">
+            <a class="navbar-brand" href="#">
+            <img src="../resources/img/elo2.png" width="200" height="70" alt="">
+            </a>
+        </nav>
+        <!-- Fim navbar -->
+
+        <!-- Inicio conteudo -->
+        <div class="formulario">
         <h1>Formulário</h1>
         <div class="form-group">
             <label for="nome">Nome<label class="obg">*</label></label>
-            <input type="text" class="form-control" id="nome" v-model="dadosForm.nome" placeholder="Digite seu primeiro nome">
+            <input type="text" class="form-control" id="nome" maxlength="30" v-model="nomeTmp" placeholder="Digite seu primeiro nome">
+            <small class="form-text text-muted size">Max: 30 carac</small>
         </div>
         <div class="form-group">
             <label for="Sobrenome">Sobrenome<label class="obg">*</label></label>
-            <input type="text" class="form-control" id="Sobrenome"  v-model="sobrenomeTmp" placeholder="Digite seu Sobrenome">
+            <input type="text" class="form-control" id="sobrenome" maxlength="30" v-model="sobrenomeTmp" placeholder="Digite seu Sobrenome">
+            <small class="form-text text-muted size">Max: 30 carac</small>
         </div>
         <div class="form-group">
             <label for="telefone">Telefone<label class="obg">*</label></label>
@@ -45,30 +72,32 @@
             <label for="nao">Não</label><br>
         </div>
         <div v-if="dadosForm.redeSocial == 'sim'">
-            <h4>Quais redes?</h4>
+            <h4>Quais redes?<label class="obg">*</label></h4>
             <div class="form-check" v-for="rede in opRede">
                 <input type="checkbox" class="form-check-input" id="rede" :value="rede" v-model="dadosForm.rede">
                 <label class="form-check-label" for="rede">{{ rede }}</label>
             </div>
         </div>
         <div class="submit">
-            <button class="btn btn-primary botao" @click="enviaDados();">Enviar</button>
+            <button class="btn btn-primary botao" id="botao" @click="enviaDados();">Enviar</button>
         </div>  
+        </div>
     </div>
+    <!-- Fim conteúdo -->
 
+    <!-- Inicio footer -->
     <footer class="page-footer font-small bg-dark ft-size">
         <div class="footer-copyright text-center py-3">© 2020 Copyright: elogroup</div>      
-      </footer>
+    </footer>
+    <!-- Fim footer -->
 
-    <!-- Axios local -->
     <script src="../resources/js/axios.min.js"></script>
-    <!-- Vue cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script src="../resources/js/form.js" ></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="../resources/js/jquery.mask.js"></script>
-    <script src="../resources/js/validator.js"></script>
+    <script src="../resources/js/mascara.js"></script>
 </body>
 </html>
