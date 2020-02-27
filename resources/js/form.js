@@ -38,7 +38,7 @@ new Vue({
             axios.post('http://localhost:8080').then(function(response){
 
             }).catch(function(error){
-                alert(error);
+                // alert(error);
             });
         }
       

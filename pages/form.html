@@ -4,21 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../resources/css/form.css">
     <title>Formulário</title>
 
 </head>
 <body>
-    <div id="form">
-        <div v-for="i in opRede">
-            <a href="">{{ i }}</a><br>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="../resources/img/EloGroup.png" width="200" height="40" alt="">
+        </a>
+      </nav>
+    <div id="form" class="formulario">
+        <h1>Formulário</h1>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu primeiro nome">
         </div>
+        <div class="form-group">
+            <label for="Sobrenome">Sobrenome</label>
+            <input type="text" class="form-control" id="Sobrenome" placeholder="Digite seu Sobrenome">
+        </div>
+        <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input type="text" class="form-control" id="telefone" placeholder="Digite seu telefone">
+            <small id="telefone" class="form-text text-muted">dd + número de telefone</small>
+        </div>
+        <div class="form-group">
+            <label for="midia">Como nos conheceu?</label>
+            <div v-for="op in  opComoConheceu">
+                <input type="radio" name="" id="">
+                <label>{{ op }}</label>
+            </div>
+        </div>
+        <div class="form-check" v-for="rede in opRede">
+            <input type="checkbox" class="form-check-input" id="rede">
+            <label class="form-check-label" for="rede">{{ rede }}</label>
+        </div>
+        <div class="submit">
+            <button class="btn btn-primary botao">Enviar</button>
+        </div>  
     </div>
-    <!-- Axios cdn -->
+
+
+        <!-- Axios cdn -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
     <!-- Axios local -->
     <script src="../resources/js/axios.min.js"></script>
     <!-- Vue cdn -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script src="../resources/js/form.js" ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
