@@ -1,9 +1,13 @@
 .formulario {
+    font-family: monospace;
+    font-size: 20px;
     padding-left: 20%;
     padding-right: 20%;
 }
 
 h1{
+    font-family: monospace;
+    font-size: 36px;
     padding-top: 20px;
     text-align: center;
 }
@@ -15,4 +19,23 @@ h1{
 .submit{
     padding-top: 20px;
     padding-bottom: 50px;
+}
+
+input[type=text]{
+    border-radius: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-color: rgb(255, 166, 0);
+}
+
+.obg{
+    color: crimson;
+}
+
+.ft-size{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: whitesmoke;
+
 }

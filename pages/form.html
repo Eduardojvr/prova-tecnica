@@ -10,28 +10,28 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-dark">
         <a class="navbar-brand" href="#">
-          <img src="../resources/img/EloGroup.png" width="200" height="40" alt="">
+          <img src="../resources/img/elo2.png" width="200" height="70" alt="">
         </a>
       </nav>
     <div id="form" class="formulario">
         <h1>Formulário</h1>
         <div class="form-group">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome<label class="obg">*</label></label>
             <input type="text" class="form-control" id="nome" placeholder="Digite seu primeiro nome">
         </div>
         <div class="form-group">
-            <label for="Sobrenome">Sobrenome</label>
+            <label for="Sobrenome">Sobrenome<label class="obg">*</label></label>
             <input type="text" class="form-control" id="Sobrenome" placeholder="Digite seu Sobrenome">
         </div>
         <div class="form-group">
-            <label for="telefone">Telefone</label>
+            <label for="telefone">Telefone<label class="obg">*</label></label>
             <input type="text" class="form-control" id="telefone" placeholder="Digite seu telefone">
             <small id="telefone" class="form-text text-muted">dd + número de telefone</small>
         </div>
         <div class="form-group">
-            <label for="midia">Como nos conheceu?</label>
+            <label for="midia">Como nos conheceu?<label class="obg">*</label></label>
             <div v-for="op in  opComoConheceu">
                 <input type="radio" name="" id="">
                 <label>{{ op }}</label>
@@ -46,9 +46,10 @@
         </div>  
     </div>
 
+    <footer class="page-footer font-small bg-dark ft-size">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright: elogroup</div>      
+      </footer>
 
-        <!-- Axios cdn -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script> -->
     <!-- Axios local -->
     <script src="../resources/js/axios.min.js"></script>
     <!-- Vue cdn -->
