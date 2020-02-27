@@ -1,4 +1,4 @@
-![EloGroup](EloGroup.png)
+![EloGroup](resources/img/EloGroup.png)
 
 # Como rodar
 
