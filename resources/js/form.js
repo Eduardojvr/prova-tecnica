@@ -4,21 +4,18 @@ new Vue({
         dadosForm: {
             nome : '',
             telefone: '',
-            comoConheceu: [],
+            comoConheceu: '',
             redeSocial: '',
             rede: []
         },
         opComoConheceu: [],
-        opRede: []
-
-
+        opRede: [],
+        sobrenomeTmp: '',
     },
     created : function(){
         const vm = this;
         vm.getOpcoesConheceu();
         vm.getOpcoesRede();
-        vm.enviaDados();
-
     },
     methods : {
         // Simula dados vindo de uma api com os tipos de informações para "Como nos conheceu"
@@ -32,7 +29,10 @@ new Vue({
         },
         enviaDados: function(){
             const vm =this;
-            console.log(vm.dadosForm.rede);
+            if (vm.dadosForm.redeSocial != 'sim'){
+                vm.dadosForm.rede = [];
+            }
+            console.log(vm.dadosForm);
             // axios.post('http://localhost:8080').then(function(response){
 
             // }).catch(function(error){

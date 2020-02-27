@@ -19,20 +19,21 @@
         <h1>Formulário</h1>
         <div class="form-group">
             <label for="nome">Nome<label class="obg">*</label></label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu primeiro nome">
+            <input type="text" class="form-control" id="nome" v-model="dadosForm.nome" placeholder="Digite seu primeiro nome">
         </div>
         <div class="form-group">
             <label for="Sobrenome">Sobrenome<label class="obg">*</label></label>
-            <input type="text" class="form-control" id="Sobrenome" placeholder="Digite seu Sobrenome">
+            <input type="text" class="form-control" id="Sobrenome"  v-model="sobrenomeTmp" placeholder="Digite seu Sobrenome">
         </div>
         <div class="form-group">
             <label for="telefone">Telefone<label class="obg">*</label></label>
-            <input type="text" class="form-control" id="telefone" placeholder="Digite seu telefone">
+            <input type="text" class="form-control" id="telefone" v-model="dadosForm.telefone" placeholder="Digite seu telefone">
             <small id="telefone" class="form-text text-muted">dd + número de telefone</small>
         </div>
         <div class="form-group">
             <label for="midia">Como nos conheceu?<label class="obg">*</label></label><br>
-            <select>
+            <select v-model="dadosForm.comoConheceu">
+                <option disabled value="">Escolha uma alternativa...</option>
                 <option v-for="op in opComoConheceu" :value="op">{{op}}</option>
               </select>
         </div>
