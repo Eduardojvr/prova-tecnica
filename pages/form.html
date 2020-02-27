@@ -31,18 +31,27 @@
             <small id="telefone" class="form-text text-muted">dd + número de telefone</small>
         </div>
         <div class="form-group">
-            <label for="midia">Como nos conheceu?<label class="obg">*</label></label>
-            <div v-for="op in  opComoConheceu">
-                <input type="radio" name="" id="">
-                <label>{{ op }}</label>
+            <label for="midia">Como nos conheceu?<label class="obg">*</label></label><br>
+            <select>
+                <option v-for="op in opComoConheceu" :value="op">{{op}}</option>
+              </select>
+        </div>
+        <div class="form-group">
+            <label for="midia">Possui rede social?<label class="obg">*</label></label><br>
+            <input type="radio" id="sim" name="op" value="sim" v-model="dadosForm.redeSocial">
+            <label for="sim">Sim</label>&nbsp;
+            <input type="radio" id="nao" name="op" value="nao" v-model="dadosForm.redeSocial">
+            <label for="nao">Não</label><br>
+        </div>
+        <div v-if="dadosForm.redeSocial == 'sim'">
+            <h4>Quais redes?</h4>
+            <div class="form-check" v-for="rede in opRede">
+                <input type="checkbox" class="form-check-input" id="rede" :value="rede" v-model="dadosForm.rede">
+                <label class="form-check-label" for="rede">{{ rede }}</label>
             </div>
         </div>
-        <div class="form-check" v-for="rede in opRede">
-            <input type="checkbox" class="form-check-input" id="rede">
-            <label class="form-check-label" for="rede">{{ rede }}</label>
-        </div>
         <div class="submit">
-            <button class="btn btn-primary botao">Enviar</button>
+            <button class="btn btn-primary botao" @click="enviaDados();">Enviar</button>
         </div>  
     </div>
 
