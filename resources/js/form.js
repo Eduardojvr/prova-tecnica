@@ -82,6 +82,7 @@ new Vue({
                 });
                 document.getElementById("botao").disabled = true;
                 document.getElementById("botao").style.background = '#D3D3D3';
+                alert("Dados registrados!");
 
             } else {
                 $("#alerta").modal("show");
